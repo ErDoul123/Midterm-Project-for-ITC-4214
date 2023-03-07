@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Book Rating Site</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			var books = [];
+
+			//add a book to the list
+			function addBook(name, rating) {
+				var book = {name: name, rating: rating};
+				books.push(book);
+				updateList();
+			}
+
+			//delete a book from the list
+			function deleteBook(index) {
+				books.splice(index, 1);
+				updateList();
+			}
+
+			//update the list of books
+			function updateList() {
+				// clear the list
+				$('#book-list').empty();
+
+				// add book to the list
+				$.each(books, function(index, book) {
+					var row = $('<tr>');
+					row.append($('<td>').text(book.name));
+					row.append($('<td>').text(book.rating));
+					row.append($('<td>').html('<button class="delete-btn">Delete</button>'));
+					$('#book-list').append(row);
+				});
+			}
+
+			// sorts the list of books by name or rating
+			function sortList(sortBy) {
+				books.sort(function(a, b) {
+					if (sortBy == 'name') {
+						return a.name.localeCompare(b.name);
+					} else if (sortBy == 'rating') {
+						return b.rating - a.rating;
+					}
+				});
+				updateList();
+			}
+
+
+
+			//form submission
+			$('#add-form').submit(function(event) {
+				event.preventDefault();
+				var name = $('#name-input').val();
+				var rating = parseFloat($('#rating-input').val());
+				if (name && rating >= 0 && rating <= 10) {
+					addBook(name, rating);
+					$('#name-input').val('');
+					$('#rating-input').val('');
+				}
+			});
+
+			//delete button
+			$(document).on('click', '.delete-btn', function() {
+				var index = $(this).closest('tr').index();
+				deleteBook(index);
+			});
+
+			//short button
+			$('#sort-name-btn').click(function() {
+				sortList('name');
+			});
+
+			$('#sort-rating-btn').click(function() {
+				sortList('rating');
+			});
+		});
+	</script>
+
+	<style>
+	body {
+  		font-family: Arial, sans-serif;
+	}
+	/* Header */
+	.header {
+	  background-color: #009933;
+	  padding: 20px;
+	  text-align: center;
+	}
+
+	.header h1 {
+	  margin: 0;
+	  font-size: 36px;
+	  color: white;
+	}
+
+	.header p {
+	  margin: 0;
+	  font-size: 18px;
+	  color: white;
+	}
+
+	/* Navigation */
+	.topnav {
+	  background-color: #00cc41;
+	  overflow: hidden;
+	}
+
+	.topnav a {
+	  float: right;
+	  color: #ffffff;
+	  text-align: center;
+	  padding: 14px 16px;
+	  text-decoration: none;
+	  font-size: 17px;
+	}
+
+	.topnav a:hover {
+	  background-color: #ddd;
+	  color: black;
+	}
+
+	/* Form */
+	form {
+	  display: flex;
+	  flex-wrap: wrap;
+	  justify-content: center;
+	  align-items: center;
+	  margin: 20px;
+	}
+
+	label {
+	  font-size: 20px;
+	  margin-right: 10px;
+	}
+
+	input[type="text"],
+	input[type="number"],
+	input[type="submit"] {
+	  font-size: 20px;
+	  padding: 10px;
+	  border: 2px solid #ddd;
+	  border-radius: 4px;
+	  margin-right: 10px;
+	}
+
+	input[type="submit"] {
+	  font-size: 20px;
+	  padding: 8px 16px;
+	  background-color: #00cc41;
+	  color: white;
+	  border: none;
+	  border-radius: 4px;
+	}
+
+
+	div button {
+		display: flex;
+	  flex-wrap: wrap;
+	  font-size: 16px;
+	  padding: 8px 16px;
+	  background-color: #00cc41;
+	  color: white;
+	  border: none;
+	  border-radius: 4px;
+	  margin-top: 5px;
+	  margin-right: 10px;
+	  position :relative;
+	  right: 250px;
+	}
+
+	div button:hover {
+		background-color: #009933;
+	}
+
+	/* Table */
+	table {
+	  border-collapse: collapse;
+	  width: 55%;
+	  margin: 0 auto;
+	}
+
+	th,
+	td {
+	  text-align: center;
+	  padding: 12px;
+
+	}
+
+	th {
+	  background-color: #00cc41;
+	  color: #ffffff;
+	  font-size: 20px;
+	}
+
+	td {
+	  font-size: 18px;
+	}
+
+	/* Footer */
+	footer {
+	  position: fixed;
+	  bottom: 0;
+	  width: 100%;
+	  background-color: #009933;
+	  color: white;
+	  text-align: center;
+	  padding: 10px;
+	}
+
+	footer h2 {
+	  font-size: 24px;
+	  margin: 0;
+	}
+
+	footer p {
+	  font-size: 18px;
+	  margin: 0;
+	}
+
+	</style>
+
+
+	</head>
+
+
+	<body>
+
+		<div class="header">
+			<h1>Book Rating</h1>
+			<p>In this website you are able to list your favorite books and rate them!</p>
+		</div>
+
+		<div class="topnav">
+			<a href="#" style="float:right">About Us</a>
+		</div>
+
+
+
+		<form id="add-form">
+
+			<label for="name-input">Book Name:</label>
+			<input type="text" id="name-input" required>
+
+			<label for="rating-input">Rating:</label>
+			<input type="number" id="rating-input" min="0" max="10" step="0.5" required>
+
+			<input type="submit" value="Add Book">
+
+		</form>
+
+		<div>
+			<button id="sort-name-btn" style="float:right">Sort by Name</button>
+			<button id="sort-rating-btn" style="float:right">Sort by Rating</button>
+		</div>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Book Name</th>
+					<th>Rating</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+
+			<tbody id="book-list"></tbody>
+
+		</table>
+
+		<footer>
+			<h2>&copy; Copyright Reserved.</h2>
+			<p>Coders and Designers <br>Errikos Doulgeridis & Vasileios Metallinos </p>
+		</footer>
+
+	</body>
+</html>
