@@ -2,6 +2,8 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
+    background-color: #f2f2f2;
+
     line-height: 1.5;
     margin: 0;
     padding: 0;
@@ -9,53 +11,72 @@ body {
 
 
 /* Header */
-
-header {
-    text-align: center;
-    background-color: #333333;
-    color: #fff;
-    padding: 20px;
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #333333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 36px;
-}
-
-header p {
-    margin: 10px 0 0;
-    font-size: 18px;
-}
-
-
-/* navigation bar */
-
-.topnav {
-    background-color: #4d4d4d;
-    overflow: hidden;
-    width:100%;
-}
-
-.logo img{
-    position:absolute;
-    margin-top:0px;
-    margin-left: 10px;
-    max-width: 100px;
-}
+.logo img {
+  max-width: 120px;
+ }
 
 .topnav a {
-    float: right;
-    color: #f2f2f2;
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 10px 35px;
     text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
-    font-size: 18px;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .topnav a:hover {
-    background-color: #ddd;
-    color: black;
+  background-color: #dddddd;
+  color: black;
 }
+
+
+/* Title */
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #4d4d4d;
+
+}
+
+.title h1 {
+  margin: 0 0 5px;
+  font-size: 36px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.title p {
+   margin: auto;
+   margin-bottom:10px;
+  padding: 0 55px;
+  font-size: 18px;
+  text-align: center;
+  color: white;
+  line-height: 1.5;
+  border-radius: 5px;
+  background-color: #4CAF50;
+}
+
+
 
 /* Input fields */
 
@@ -83,7 +104,7 @@ input[type="submit"] {
 }
 
 button[type="submit"] {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     border: none;
     color: white;
     padding: 12px 24px;
@@ -101,54 +122,47 @@ button[type="submit"]:hover {
 }
 
 /* Style the sort buttons */
+
+.sort-buttons{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
 #sort-name-btn,
 #sort-rating-btn {
-    float: right;
     margin-right: 20px;
     font-size: 18px;
     padding: 10px 20px;
     border-radius: 5px;
-    border: none;
+    border: 1px solid black;
     cursor: pointer;
-    background-color: #f2f2f2;
+    background-color: #ddd;
     box-shadow: 0 0 5px #ccc;
 }
 
 #sort-name-btn:hover,
 #sort-rating-btn:hover {
-    background-color: #ddd;
+    background-color: #999999;
 }
 
-
-button delete-btn{
-    font-size: 18px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    background-color: #f2f2f2;
-    box-shadow: 0 0 5px #ccc;
-}
 
 
 /* Book table */
 
 .content-table {
     border-collapse: collapse;
-    
+
     margin: auto;
-    margin-top:115px;
-    
+    margin-top:15px;
     width: 45%;
     min-width: 400px;
-    
     font-size: 18px;
-    
     border-radius: 5px 5px 0 0;
-    
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
-    
+
 }
 
 .content-table thead th {
@@ -196,6 +210,18 @@ tbody td:last-child {
     text-align: left;
 }
 
+.delete-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  font-size:14px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.delete-btn:hover {
+  background-color: darkred;
+}
 
 /* Style the footer */
 
@@ -247,4 +273,3 @@ footer{
     text-transform: uppercase;
     opacity: 0.6;
 }
-
