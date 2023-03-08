@@ -46,6 +46,7 @@ $(document).ready(function() {
                 return b.rating - a.rating;
             }
         });
+        
         updateList();
     }
 
