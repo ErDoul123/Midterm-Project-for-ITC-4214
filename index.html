@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -14,22 +14,24 @@
 	</head>
 
 	<body>
-		<!-- Logo -->
-		<div class="logo"><a href="#"><img src="WebsiteLogo.png"></a></div>
-		
-		<!-- The navigation bar contains a link to the "About Us" page. -->
-		<nav class="topnav">
-			<a href="#">About Us</a>
-		</nav>
+
 		<!-- The header section contains a title and description of the website. -->
-		<header>
-			<h1>Book Rating</h1>
-			<p>In this website you are able to list your favorite books and rate them!</p>
+		<header class="sticky-header">
+		  <div class="logo">
+			<a href="index.html"><img src="WebsiteLogo.png" alt="Logo"></a>
+		  </div>
+		  <nav class="topnav">
+			<a href="about.html">About Us</a>
+		  </nav>
 		</header>
-		
+
 
 		<!-- The main section contains a form for adding a book, two sort buttons, and a table for displaying the list of books. -->
 		<main>
+			<div class="title">
+			<h1>Book Rating</h1>
+			<p>In this website you are able to list your favorite books and rate them!</p>
+			</div>
 			<!-- The add-form is a form for adding a book with name and rating fields, and a button to submit the form. -->
 			<form id="add-form">
 				<label for="name-input">Book Name:</label>
@@ -40,7 +42,7 @@
 
 				<button type="submit">Add Book</button>
 			</form>
-			
+
 			<!-- The sort-buttons div contains two buttons for sorting the list of books. -->
 			<div class="sort-buttons">
 				<button id="sort-name-btn">Sort by Name</button>
