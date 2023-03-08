@@ -1,12 +1,21 @@
-/* Font styles */
+/******General *******/
+
+html{
+    height:100%;
+    box-sizing:border-box;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     background-color: #f2f2f2;
-
     line-height: 1.5;
+    position: relative;
     margin: 0;
+    min-height:100%;
     padding: 0;
+    padding-bottom:6.74rem;
+    box-sizing:inherit;
 }
 
 
@@ -46,6 +55,62 @@ body {
 }
 
 
+/* Style the footer */
+
+
+footer{
+    background: black;
+    height:50px;
+    position: absolute;
+    right:0;
+    left:0;
+    bottom:0;
+    width: 100vw;
+    margin-top:100px;
+    font-family: "Open Sans;
+    padding-top: 40px;
+    color: white;
+    overflow:hidden;
+}
+
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 500px;
+    float:right;
+    margin-right: 10px;
+    line height: 5px;
+    font-size: 16px;
+}
+
+.footer-content a{
+    color: cyan;
+
+}
+.footer-content a:hover{
+    color: red;
+
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    text-transform: capitalize;
+    margin-left: 10px;
+}
+
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+/*** INDEX PAGE ****/
+
 /* Title */
 .title {
   display: flex;
@@ -57,7 +122,7 @@ body {
 }
 
 .title h1 {
-  margin: 0 0 5px;
+  margin: 20px 0 20px;
   font-size: 36px;
   color: white;
   font-weight: bold;
@@ -221,55 +286,4 @@ tbody td:last-child {
 }
 .delete-btn:hover {
   background-color: darkred;
-}
-
-/* Style the footer */
-
-footer{
-    background: black;
-    height:50px;
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
-    margin-top:100px;
-    font-family: "Open Sans;
-    padding-top: 40px;
-    color: white;
-    overflow:hidden;
-}
-
-.footer-content{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-}
-
-.footer-content {
-    max-width: 500px;
-    float:right;
-    margin-right: 10px;
-    line height: 5px;
-    font-size: 16px;
-}
-
-.footer-content a{
-    color: cyan;
-
-}
-.footer-content a:hover{
-    color: red;
-
-}
-
-.footer-bottom p {
-    font-size: 14px;
-    text-transform: capitalize;
-    margin-left: 10px;
-}
-
-.footer-bottom span{
-    text-transform: uppercase;
-    opacity: 0.6;
 }
