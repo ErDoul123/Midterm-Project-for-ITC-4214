@@ -68,7 +68,7 @@ footer{
     bottom:0;
     width: 100vw;
     margin-top:100px;
-    font-family: "Open Sans";
+    font-family: "Open Sans;
     padding-top: 40px;
     color: white;
     overflow:hidden;
@@ -86,7 +86,7 @@ footer{
     max-width: 500px;
     float:right;
     margin-right: 10px;
-    line-height: 5px;
+    line height: 5px;
     font-size: 16px;
 }
 
@@ -267,7 +267,7 @@ tbody td:first-child {
     text-align: left;
 }
 
-tbody td {
+tbody td: {
     font-weight: bold;
     text-align: right;
 }
@@ -294,38 +294,36 @@ tbody td:last-child {
 /* Carousel */
 
 .carousel{
-    position: relative;
-    height:500px;
-    width:500px;
-    margin:0 auto;
 
+    position: relative;
+    margin: 0 auto;
+    height:350px;
+    width:350px;
+    margin-top: 50px;
 }
 
 .carousel__image{
+
     width: 100%;
     height:100%;
     object-fit: cover;
-    
-    
+    border-radius: 50px;
 
 }
 
 .carousel__track-container{
     background: lightgreen;
     height: 100%;
-    
+    width:100%;
     position: relative;
-    overflow: hidden;
+    border-radius: 50px;
 }
 
 .carousel__track{
     padding:0;
     margin:0;
     list-style: none;
-    position: relative;
-    bottom: +500px;
-    height: 100%;
-
+    margin-top: 20px;
 }
 
 .carousel__slide{
@@ -333,7 +331,6 @@ tbody td:last-child {
     top:0;
     bottom: 0;
     width: 100%;
-    
 }
 
 .carousel__button{
@@ -349,17 +346,34 @@ tbody td:last-child {
 .carousel__button--left{
     left: -50px;
 }
+
 .carousel__button--right{
     right: -50px;
 }
+
 .carousel__button img {
     width: 40px;
 
 }
 
+.carousel__nav {
 
+    display:flex;
+    justify-content: center;
+    padding: 10px;
+}
+.carousel__indicator {
+    border: 0;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: rgba(0,0,0, .3);
+    margin: 0 12px;
+}
 
-
+.carousel__indicator.current-slide{
+    background: rgba(0,0,0, .75)
+}
 
 /* Info */
 
