@@ -1,19 +1,10 @@
 $(document).ready(function() {
 
-    var books = [];
-
-    //add a book to the list
-    function addBook(name, rating) {
-        var book = {name: name, rating: rating};
-        books.push(book);
-        updateList();
-    }
-
-    //delete a book from the list
-    function deleteBook(index) {
-        books.splice(index, 1);
-        updateList();
-    }
+    var books = [
+        { name: "The Midnight Library by Matt Haig", rating: 7 },
+        { name: "The Four Winds by Kristin Hannah", rating: 8 },
+        { name: "The Vanishing Half by Brit Bennett", rating: 9 }
+    ];
 
     //update the list of books
     function updateList() {
@@ -31,6 +22,22 @@ $(document).ready(function() {
             $('#book-list').append(row);
 
         });
+    }
+
+    // call updateList() to display the initial book data
+    updateList();
+
+    //add a book to the list
+    function addBook(name, rating) {
+        var book = {name: name, rating: rating};
+        books.push(book);
+        updateList();
+    }
+
+    //delete a book from the list
+    function deleteBook(index) {
+        books.splice(index, 1);
+        updateList();
     }
 
     // sorts the list of books by name or rating
@@ -78,9 +85,9 @@ $(document).ready(function() {
     });
 
     const aboutBtn = document.getElementById('about-btn');
-aboutBtn.addEventListener('click', () => {
-  window.location.href = 'about.html';
-});
+    aboutBtn.addEventListener('click', () => {
+        window.location.href = 'about.html';
+    });
 
 
 
