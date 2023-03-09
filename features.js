@@ -1,42 +1,3 @@
-const track = document.querySelector(".carousel__track");
-const slides = Array.from(track.children);
-const nextButton = document.querySelector('.carousel__button--right');
-const prevButton = document.querySelector('.carousel__button--left');
-
-//set slides into positions
-const slideWidth = slides[0].getBoundingClientRect().width;
-
-
-const setSlidePosition = (slide,index) => {
-    slide.style.left = slideWidth*index +'px';
-}
-
-slides.forEach(setSlidePosition);
-
-// right button
-nextButton.addEventListener('click', e => {
-    const currentSlide = track.querySelector('.current-slide')
-    const nextSlide = currentSlide.nextElementSibling;
-    const amountToMove = nextSlide.style.left;
-    track.style.transform= 'translateX(-'+amountToMove+')';
-    //next slide
-    currentSlide.classList.remove('current-slide');
-    nextSlide.classList.add('current-slide');
-})
-// left button
-prevButton.addEventListener('click', e => {
-    const currentSlide = track.querySelector('.current-slide')
-    const prevSlide = currentSlide.previousElementSibling;
-    const amountToMove = prevSlide.style.left;
-    track.style.transform= 'translateX('+amountToMove+')';
-    //prev slide
-    currentSlide.classList.remove('current-slide');
-    prevSlide.classList.add('current-slide');
-
-   console.log(amountToMove);
-})
-
-
 $(document).ready(function() {
 
     var books = [];
@@ -89,7 +50,6 @@ $(document).ready(function() {
     }
 
 
-
     //form submission
     $('#add-form').submit(function(event) {
         event.preventDefault();
@@ -121,4 +81,53 @@ $(document).ready(function() {
 aboutBtn.addEventListener('click', () => {
   window.location.href = 'about.html';
 });
+
+ole.log(amountToMove);
+})
+
+
+
 });
+
+
+/* About */
+
+/* Carousel */
+
+const track = document.querySelector(".carousel__track");
+const slides = Array.from(track.children);
+const nextButton = document.querySelector('.carousel__button--right');
+const prevButton = document.querySelector('.carousel__button--left');
+
+//set slides into positions
+const slideWidth = slides[0].getBoundingClientRect().width;
+
+
+const setSlidePosition = (slide,index) => {
+    slide.style.left = slideWidth*index +'px';
+}
+
+slides.forEach(setSlidePosition);
+
+// right button
+nextButton.addEventListener('click', e => {
+    const currentSlide = track.querySelector('.current-slide')
+    const nextSlide = currentSlide.nextElementSibling;
+    const amountToMove = nextSlide.style.left;
+    track.style.transform= 'translateX(-'+amountToMove+')';
+    //next slide
+    currentSlide.classList.remove('current-slide');
+    nextSlide.classList.add('current-slide');
+})
+// left button
+prevButton.addEventListener('click', e => {
+    const currentSlide = track.querySelector('.current-slide')
+    const prevSlide = currentSlide.previousElementSibling;
+    const amountToMove = prevSlide.style.left;
+    track.style.transform= 'translateX('+amountToMove+')';
+    //prev slide
+    currentSlide.classList.remove('current-slide');
+    prevSlide.classList.add('current-slide');
+
+   console.log(amountToMove);
+})
