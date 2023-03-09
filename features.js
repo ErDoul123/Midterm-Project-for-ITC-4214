@@ -82,7 +82,6 @@ aboutBtn.addEventListener('click', () => {
   window.location.href = 'about.html';
 });
 
-ole.log(amountToMove);
 
 
 /* About */
