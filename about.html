@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<script src="features.js" defer></script>
+    <meta charset="UTF-8">
+    <title>About Us</title>
+</head>
+<head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <title>About</title>
+</head>
+
+
+<body>
+
+	<!-- The header section contains a title and description of the website. -->
+		<header class="sticky-header">
+		  <div class="logo">
+			<a href="index.html"><img src="Photos/WebsiteLogo.png" alt="Logo"></a>
+		  </div>
+		  <nav class="topnav">
+			<a href="index.html">Home</a>
+		  </nav>
+		</header>
+
+	<div class="carousel">
+		<div class="carousel__track-container"></div>
+			<ul class="carousel__track">
+				<li class="carousel__slide current-slide">
+					<img class="carousel__image" src="Photos/pic1.jpg" alt="pic">
+				</li>
+				<li class="carousel__slide">
+					<img class="carousel__image" src="Photos/pic2.jpg" alt="pic">
+				</li>
+				<li class="carousel__slide">
+					<img class="carousel__image" src="Photos/pic3.jpg" alt="pic">
+				</li>
+			</ul>
+		<button class="carousel__button carousel__button--right">
+			<img src="Photos/arrow-right.svg" alt="">
+		</button>
+		<button class="carousel__button carousel__button--left">
+			<img src="Photos/arrow-left.svg" alt="">
+		</button>
+
+		<div class="carousel__nav">
+			<button class="carousel__indicator current-slide"></button>
+			<button class="carousel__indicator"></button>
+			<button class="carousel__indicator"></button>
+		</div>
+	</div>
+
+	<div class="card-grid">
+		<div class="card">
+			<div class="card-img">
+				<img src="Photos/avatar1.png" alt="Avatar of Person 1">
+			</div>
+				<div class="card-content">
+					<h3 class="card-title">Errikos Doulgeridis</h3>
+					<p class="card-text">Undergraduate Information Technology Student at the American College of Greece.</p>
+				</div>
+		</div>
+		<div class="card">
+			<div class="card-img">
+				<img src="Photos/avatar2.png" alt="Avatar of Person 2">
+			</div>
+			<div class="card-content">
+				<h3 class="card-title">Vasileios Metallinos</h3>
+			<p class="card-text">Undergraduate Information Technology Student at the American College of Greece.</p>
+		</div>
+	</div>
+</div>
+
+
+
+  <!-- The footer section contains contact information and a copyright notice. -->
+		<footer>
+			<div class="footer-content">
+				<p>
+					Contact information:
+					<a href="mailto:e.doulgeridis@acg.edu">e.doulgeridis@acg.edu</a> or
+					<a href="mailto:v.metallinos@acg.edu">v.metallinos@acg.edu </a>
+				</p>
+			</div>
+
+			<div class="footer-bottom">
+				<p>copyright &copy;2023 book rate.
+				designed by <span>Errikos Doulgeridis & Vasileios Metallinos</span></p>
+			</div>
+		</footer>
+</body>
+</html>
